@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: notification-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: never
+
+info:
+  app:
+    name: SecureSphere Notification Service
+    description: Event-driven notification processing
+    version: 1.0.0

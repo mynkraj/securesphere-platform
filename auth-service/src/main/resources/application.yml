@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/securesphere_auth
+    username: securesphere
+    password: ${DB_PASSWORD:secure_dev_password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+management:
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
+info:
+  app:
+    name: SecureSphere Authentication Service
+    description: Authentication and token management
+    version: 1.0.0

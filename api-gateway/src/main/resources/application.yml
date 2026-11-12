@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: never
+
+info:
+  app:
+    name: SecureSphere API Gateway
+    description: Central entry point for SecureSphere microservices
+    version: 1.0.0
